@@ -18,16 +18,23 @@ The questions from your notes today are below, please copy your answers them her
 ```{R}
 make_celsius <- function(degrees_fahrenheit = 32){
   degrees_celsius <- (degrees_fahrenheit - 32) * (5/9)
-  degrees_celsius
+  return(degrees_celsius)
 }
+
+make_celsius(212)
 ```
 
-2. Expand that function so that it takes a temperature in Fahrenheit and a distance in feet and returns **both** the temperature in Celcius and the distance in meters (you'll likely need to remember the `c()` function!)
+2. Expand that function so that it takes a temperature in Fahrenheit and a distance in feet and returns **both** the temperature in Celsius and the distance in meters (you'll likely need to remember the `c()` function!)
 
 
 ```{r}
+conversions <- function(temp_f, distance_f){
+  temp_c <- (temp_f - 32) * (5/9)
+  distance_m <- (distance_f / 3.281)
+  return(c(temp_c, distance_m))
+}
 
-
+conversions(32, 3)
 ```
 
 
@@ -35,24 +42,52 @@ make_celsius <- function(degrees_fahrenheit = 32){
 
 ```{R}
 
+is_it_num <- function(test_num){
+if(test_num > 0){
+  print("Hooray! A positive number!")
+ } else if (test_num < 0) {
+   print("Uh-oh, a negative number!?")
+ } else {
+   print("Whoa, a zero!")
+ }
+}
 
+is_it_num(3)
+is_it_num(-2)
+is_it_num(0)
 ```
 
 4. Write a function that returns the absolute value of the number passed as an argument.
    + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
    
 ```{r}
+abs_val <- function(number = 1){
+  if(number > 0){
+    print(number)
+  } else {
+    print(number * -1)
+  }
+}
 
-
+abs_val(3)
+abs_val(-5)
 ```
 
 5. Hard mode: add an error check to that function that prints out the string "Please pass a numerical value to this function" if the user passes the function a string. 
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
 ```{r}
+abs_val <- function(number = 1){
+  if(number > 0){
+    print(number)
+    
+  } else {
+    print(number * -1)
+    
+  } else if (number)
+}
 
-
-
+abs_val("Hello")
 ```
    
    
