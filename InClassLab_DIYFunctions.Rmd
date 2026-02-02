@@ -77,17 +77,18 @@ abs_val(-5)
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
 ```{r}
-abs_val <- function(number = 1){
+abs_val <- function(number){
   if(number > 0){
     print(number)
-    
+  } else if(is.character(number) == TRUE){
+    print("Please pass a numerical value to this function.")
   } else {
     print(number * -1)
-    
-  } else if (number)
+  } 
 }
 
-abs_val("Hello")
+abs_val("A")
+abs_val(-1)
 ```
    
    
