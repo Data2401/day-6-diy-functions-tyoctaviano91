@@ -1,6 +1,6 @@
 ---
 title: "In Class Lab - DIY Functions"
-author: "Dr. Shoemaker"
+author: "Tyler Guerrero"
 date: "DATA 2401"
 output: html_document
 ---
@@ -13,11 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ## In Class Activity 
 The questions from your notes today are below, please copy your answers them here! Then complete the two new tasks, and attempt the "hard mode" if you have time. 
 
-1. Write your own function that takes the temperature in Fahrenheit as an argument and returns the Celcius equivalent. 
+1. Write your own function that takes the temperature in Fahrenheit as an argument and returns the Celsius equivalent. 
 
 ```{R}
-
-
+make_celsius <- function(degrees_fahrenheit = 32){
+  degrees_celsius <- (degrees_fahrenheit - 32) * (5/9)
+  degrees_celsius
+}
 ```
 
 2. Expand that function so that it takes a temperature in Fahrenheit and a distance in feet and returns **both** the temperature in Celcius and the distance in meters (you'll likely need to remember the `c()` function!)
