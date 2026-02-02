@@ -78,16 +78,17 @@ abs_val(-5)
    
 ```{r}
 abs_val <- function(number){
-  if(number > 0){
+  if(is.character(number) == TRUE){
+    print("Error: Please pass a numerical value to this function.")
+  } else if(number > 0){
     print(number)
-  } else if(is.character(number) == TRUE){
-    print("Please pass a numerical value to this function.")
   } else {
     print(number * -1)
   } 
 }
 
 abs_val("A")
+abs_val(1)
 abs_val(-1)
 ```
    
